@@ -16,9 +16,7 @@
   <div class="before" style="z-index: 9999"></div>
   <div class="after"></div>
 </div>
-   <body onload="nhappass()">
-      <div class="topheader">
-         <img class="responsive" style="z-index:99;top:40px; width:300px; " src="img/hea3.png"/>
+
       </div>
 
       <div id="caidat">
@@ -66,34 +64,10 @@
        
    </body>
    <script>
-    var matkhau = "code_den_hoi_tho_cuoi_cung";
+
     var solanquay = 5;
       // Sau khi load trang sẽ yêu cầu nhập mật khẩu
-      function nhappass() {
-                  swal({
-                  title: "Vòng quay bị khoá!",
-                  text: "Nhập mật khẩu để mở khoá vòng quay:",
-                  type: "input",
-                  showCancelButton: false, // Có hiển thị nút cancel không(true = có)
-                  closeOnConfirm: false, // Có thể tắt popup khi nhấp Ok không (true = có)
-                  showLoaderOnConfirm: true, // Hiển thị loading khi nhấp vào nút Ok
-                  animation: "slide-from-top", // Như tên của nó, popup sẽ slide from top
-                  inputPlaceholder: "Nhập mật khẩu..."
-              },
-              function(inputValue) {
-                  if (inputValue === false) return false;
-      
-                  if (inputValue !== matkhau) {
-                      setTimeout(function() {
-                          swal.showInputError("Mật khẩu sai, vui lòng nhập lại!");
-                      }, 2000);
-                      return false
-                  }
-                  setTimeout(function() {
-                      swal("Mở khoá thành công!", "Hãy đưa chiếc điện thoại cho người muốn nhận lì xì nào!", "success");
-                  }, 2000);
-              });
-      }
+
 function mopopup() {
   document.getElementById("caidat").style.display = "block";
 }
@@ -186,14 +160,6 @@ $( ".lammoipopupnhantien" ).hover(
               'size': winwheelPercentToDegrees(3),
               'textFontSize': 16,
               'textFillStyle': '#ffffff'
-          },
-            {
-              'fillStyle': '#910f06',
-              'text': '500.000 VNĐ',
-              'size': winwheelPercentToDegrees(2),
-              'textFontSize': 16,
-              'textFillStyle': '#ffffff'
-            
           }],
           'animation': // Chỉ định hình động để sử dụng.
           {
