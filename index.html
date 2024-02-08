@@ -244,23 +244,14 @@ $( ".lammoipopupnhantien" ).hover(
       function lammoi() {
           swal({
                   title: "Làm mới vòng quay!",
-                  text: "Làm mới vòng quay sẽ xoá hết các vòng quay còn lại. \nLịch sử và tổng tiền lì xì vẫn giữ nguyên. \nChú ý nếu tải lại trang sẽ làm mất lịch sử và tổng tiền lì xì\nNhập mật khẩu để tiếp tục:",
+                  text: "Làm mới vòng quay sẽ xoá hết các vòng quay còn lại. \nLịch sử và tổng tiền lì xì vẫn giữ nguyên. \nChú ý nếu tải lại trang sẽ làm mất lịch sử và tổng tiền lì xì",
                   type: "input",
                   showCancelButton: true, // Có hiển thị nút cancel không(true = có)
-                  closeOnConfirm: false, // Có thể tắt popup khi nhấp Ok không (true = có)
+                  closeOnConfirm: true, // Có thể tắt popup khi nhấp Ok không (true = có)
                   showLoaderOnConfirm: true, // Hiển thị loading khi nhấp vào nút Ok
                   animation: "slide-from-top", // Như tên của nó, popup sẽ slide from top
-                  inputPlaceholder: "Nhập mật khẩu..."
               },
-              function(inputValue) {
-                  if (inputValue === false) return false;
-      
-                  if (inputValue !== matkhau) {
-                      setTimeout(function() {
-                          swal.showInputError("Mật khẩu sai, vui lòng nhập lại!");
-                      }, 2000);
-                      return false
-                  }
+
                   setTimeout(function() {
                       swal("Làm mới thành công!", "Hãy đưa chiếc điện thoại cho người muốn nhận lì xì nào!", "success");
 
