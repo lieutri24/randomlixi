@@ -68,7 +68,32 @@
    <script>
     var matkhau = "code_den_hoi_tho_cuoi_cung";
     var solanquay = 50;
-
+      // Sau khi load trang sẽ yêu cầu nhập mật khẩu
+      function nhappass() {
+                  swal({
+                  title: "Vòng quay bị khoá!",
+                  text: "Nhập mật khẩu để mở khoá vòng quay:",
+                  type: "input",
+                  showCancelButton: false, // Có hiển thị nút cancel không(true = có)
+                  closeOnConfirm: false, // Có thể tắt popup khi nhấp Ok không (true = có)
+                  showLoaderOnConfirm: true, // Hiển thị loading khi nhấp vào nút Ok
+                  animation: "slide-from-top", // Như tên của nó, popup sẽ slide from top
+                  inputPlaceholder: "Nhập mật khẩu..."
+              },
+              function(inputValue) {
+                  if (inputValue === false) return false;
+      
+                  if (inputValue !== matkhau) {
+                      setTimeout(function() {
+                          swal.showInputError("Mật khẩu sai, vui lòng nhập lại!");
+                      }, 2000);
+                      return false
+                  }
+                  setTimeout(function() {
+                      swal("Mở khoá thành công!", "Hãy đưa chiếc điện thoại cho người muốn nhận lì xì nào!", "success");
+                  }, 2000);
+              });
+      }
 function mopopup() {
   document.getElementById("caidat").style.display = "block";
 }
@@ -121,25 +146,25 @@ $( ".lammoipopupnhantien" ).hover(
               'textFillStyle': '#ffffff'
           }, {
               'fillStyle': '#ab6f03',
-              'text': '1.000 VNĐ',
+              'text': '5.000 VNĐ',
               'size': winwheelPercentToDegrees(20),
               'textFontSize': 28,
               'textFillStyle': '#ffffff'
           }, {
               'fillStyle': '#910f06',
-              'text': '2.000 VNĐ',
+              'text': '15.000 VNĐ',
               'size': winwheelPercentToDegrees(15),
               'textFontSize': 26,
               'textFillStyle': '#ffffff'
           }, {
               'fillStyle': '#ab6f03',
-              'text': '5.000 VNĐ',
+              'text': '25.000 VNĐ',
               'size': winwheelPercentToDegrees(15),
               'textFontSize': 24,
               'textFillStyle': '#ffffff'
           }, {
               'fillStyle': '#910f06',
-              'text': '10.000 VNĐ',
+              'text': '100.000 VNĐ',
               'size': winwheelPercentToDegrees(12),
               'textFontSize': 22,
               'textFillStyle': '#ffffff'
@@ -164,7 +189,7 @@ $( ".lammoipopupnhantien" ).hover(
           },
             {
               'fillStyle': '#910f06',
-              'text': '500.000 VNĐ',
+              'text': '150.000 VNĐ',
               'size': winwheelPercentToDegrees(2),
               'textFontSize': 16,
               'textFillStyle': '#ffffff'
